@@ -31,15 +31,16 @@ $username = 'mode';
 $password = '12345'; 
 
 // create connection | criar conexão
-try{
-    $conn = new PDO("mysql:host=$servername;dbame=myapp",$username,$password);
+try {
+    $conn = new PDO("mysql:host=$servername;dbame=$database", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo"Connection SUCESSFULL <br> Conectado com sucesso ";
+    echo "<br> BD(MySQL): Successful connection | Conexão bem -sucedida. <br>";
 
-}catch(PDOException $e){
- echo "Connection FAILED: {$e->getMessage()} <br> Conexao Falhou";
-
+} catch (PDOException $e) {
+    echo "<br> BD(MySQL): A conexão falhou | A conexão falhou.<br> (DETAILS | DETALHES): [{$e->getMessage()}]<br>";
 }
+
+
 
 
 
